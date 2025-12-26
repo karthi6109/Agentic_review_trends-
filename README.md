@@ -1,136 +1,111 @@
-Agentic Review Trend Analysis
+# **AGENTIC REVIEW TREND ANALYSIS**
+### **Swiggy – Google Play Store Reviews**
 
-Swiggy – Google Play Store Reviews
+---
 
-🔍 Problem Statement
+## **📌 PROBLEM STATEMENT**
 
-Product teams need a reliable way to track evolving user issues, feature requests, and feedback from app store reviews.
-Traditional topic modeling techniques (LDA, BERTopic) often fragment similar topics, leading to inaccurate trends.
+Product teams need a reliable way to track **evolving user issues, feature requests, and feedback** from app store reviews.
 
-This project builds an Agentic AI system that consumes daily batches of Google Play Store reviews and generates a trend analysis report showing topic frequency from T-30 to T.
+Traditional topic modeling techniques such as **LDA** and **BERTopic** often **fragment semantically similar topics**, resulting in inaccurate and unstable trends.
 
-🤖 Why Agentic AI?
+This project implements an **Agentic AI system** that consumes **daily batches of Google Play Store reviews** and generates a **trend analysis report from T-30 to T**.
 
-This solution uses multiple AI agents, each with a clearly defined responsibility:
+---
 
-High recall topic extraction
+## **🤖 WHY AGENTIC AI?**
 
-Semantic topic consolidation
+This solution uses **multiple AI agents**, each with a clearly defined responsibility:
 
-Dynamic topic discovery
+- **High recall topic extraction**
+- **Semantic topic consolidation**
+- **Dynamic topic discovery**
+- **Daily trend aggregation**
 
-Daily trend aggregation
+This approach avoids topic fragmentation and ensures **accurate, product-ready trend signals**.
 
-This avoids topic fragmentation and ensures accurate trend signals for product decision-making.
+---
 
-🧠 Agent Architecture
-Daily Google Play Reviews
-        ↓
-Ingestion Agent
-        ↓
-Topic Extraction Agent (LLM-based)
-        ↓
-Topic Deduplication Agent (Semantic Matching)
-        ↓
-Canonical Topic Taxonomy
-        ↓
-Trend Aggregation Agent
-        ↓
-T-30 → T Trend Report
+video:https://drive.google.com/file/d/1V4Fg75WiirkexO8iVnpIFwJG0zmCFkYD/view?usp=sharing
 
-🧩 Agents Overview
-1️⃣ Ingestion Agent
+## **🧠 SYSTEM ARCHITECTURE**
 
-Fetches Google Play Store reviews
+---
 
-Groups reviews by date
+## **🧩 AGENT RESPONSIBILITIES**
 
-Treats each date as a daily batch
+### **1️⃣ INGESTION AGENT**
+- Fetches Google Play Store reviews
+- Groups reviews by **date**
+- Treats each date as a **daily batch**
 
-2️⃣ Topic Extraction Agent
+---
 
-Uses LLMs to extract:
+### **2️⃣ TOPIC EXTRACTION AGENT**
+- Extracts:
+  - **Issues**
+  - **Complaints**
+  - **Feature requests**
+  - **General feedback**
+- Optimized for **high recall**
+- Uses **LLM-based semantic understanding**
 
-Issues
+---
 
-Complaints
+### **3️⃣ TOPIC DEDUPLICATION AGENT**
+- Prevents topic fragmentation
+- Consolidates semantically similar topics
 
-Feature requests
+**Example:**
+- “Delivery guy was rude”
+- “Delivery partner behaved badly”
+- “Delivery person was impolite”
 
-General feedback
+➡ **Canonical Topic:** **Delivery partner rude**
 
-Designed for high recall
+---
 
-3️⃣ Topic Deduplication Agent
+### **4️⃣ CANONICAL TOPIC TAXONOMY**
+- Maintains a **living topic store**
+- Stores normalized topic names
+- Enables consistent long-term trend tracking
 
-Prevents creation of duplicate or overlapping topics
+---
 
-Uses semantic equivalence checks to merge similar topics
-Example:
+### **5️⃣ TREND AGGREGATION AGENT**
+- Counts topic occurrences per day
+- Generates trend table from **T-30 to T**
+- Output is **directly consumable by product teams**
 
-“delivery guy was rude”
+---
 
-“delivery partner behaved badly”
-→ delivery partner rude
+## **📊 OUTPUT REPORT FORMAT**
 
-4️⃣ Trend Aggregation Agent
+| **Topic** | **Jun 1** | **Jun 2** | **…** | **Jun 30** |
+|----------|----------|----------|------|----------|
+| **Delivery issue** | 12 | 8 | … | 23 |
+| **Food stale** | 5 | 7 | … | 11 |
+| **Delivery partner rude** | 8 | 12 | … | 9 |
+| **Maps not working** | 2 | 4 | … | 5 |
+| **Instamart open all night** | 1 | 0 | … | 4 |
 
-Counts topic occurrences per day
+---
 
-Produces a trend table from T-30 to T
+## **⚙️ TECHNOLOGY STACK**
+- **Python**
+- **OpenAI API**
+- **google-play-scraper**
+- **Pandas**
+- **Agentic AI design**
 
-📊 Output Format
+---
 
-The final output is a CSV table consumable by product teams:
+## **🚀 HOW TO RUN**
 
-Topic	Jun 1	Jun 2	...	Jun 30
-Delivery issue	12	8	...	23
-Food stale	5	7	...	11
-Delivery partner rude	8	12	...	9
-Maps not working	2	4	...	5
-Instamart open all night	1	0	...	4
-⚙️ Tech Stack
-
-Python
-
-OpenAI API (LLM-based agents)
-
-google-play-scraper
-
-Pandas
-
-Agentic AI design patterns
-
-🚀 How to Run
+```bash
 pip install -r requirements.txt
-export OPENAI_API_KEY=your_api_key
 python main.py
 
 
-Output will be generated at:
 
-/output/trend_report.csv
 
-🎯 Key Highlights
-
-Daily batch processing
-
-High recall topic extraction
-
-Semantic topic consolidation
-
-Dynamic discovery of new topics
-
-Designed for real-world product analytics
-
-📌 Use Case
-
-This system enables product, operations, and CX teams to:
-
-Identify trending issues
-
-Detect emerging user requests
-
-Track feedback changes over time
-
-Prioritize fixes and feature improvements
