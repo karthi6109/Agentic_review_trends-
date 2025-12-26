@@ -26,8 +26,7 @@ This approach avoids topic fragmentation and ensures **accurate, product-ready t
 
 ---
 
-video:https://drive.google.com/file/d/1V4Fg75WiirkexO8iVnpIFwJG0zmCFkYD/view?usp=sharing
-
+video:https://drive.google.com/file/d/14FqMillx9Xvz4wJ-pawJTMBqPEunJpbN/view?usp=sharing
 ## **🧠 SYSTEM ARCHITECTURE**
 
 ---
