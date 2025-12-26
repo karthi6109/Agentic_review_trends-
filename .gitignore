@@ -1,0 +1,9 @@
+# Ignore local secrets and env
+data/openai_key.txt
+.env
+.venv/
+__pycache__/
+*.pyc
+/.vscode/
+# Optionally ignore local output artifacts
+# output/
