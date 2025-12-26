@@ -1,0 +1,7 @@
+pip-requirements
+google-play-scraper
+openai==0.28.0
+pandas
+numpy
+scikit-learn
+tqdm
