@@ -12,7 +12,6 @@ and generate daily topic trend reports from June 2024 onward.
 
 ## Run
 ```bash
-export OPENAI_API_KEY=your_key
 pip install -r requirements.txt
 python main.py
 ```
